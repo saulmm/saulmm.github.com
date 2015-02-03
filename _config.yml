@@ -9,7 +9,7 @@ relative_permalinks: true
 # Setup
 title:            Saúl M.
 tagline:          ''
-description:      'I usually talk android development'
+description:      'I usually talk about android development'
 url:              http://hyde.getpoole.com
 baseurl:          /
 
