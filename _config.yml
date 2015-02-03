@@ -1,5 +1,5 @@
 # Dependencies
-markdown:         kramdown
+markdown:         redcarpet
 highlighter:      pygments
 
 # Permalinks
@@ -8,7 +8,8 @@ relative_permalinks: true
 
 # Setup
 title:            Saúl M.
-description:      'Cofounder at @ameigaGames, game developer, computer science student and android lover. GDG Vigo organizer & GDG Santiago founder :)'
+tagline:          ''
+description:      'Rocking android development <br> <a href="https://twitter.com/_saulmm" target="_blank">@_saulmm</a>.'
 url:              http://hyde.getpoole.com
 baseurl:          /
 
@@ -28,7 +29,3 @@ github:
   repo:           https://github.com/saulmm/saulmm.github.com
 
 twitter: '@_saulmm'
-
-kramdown:
-  # Enable GitHub Flavored Markdown (fenced code blocks)
-  input: GFM
