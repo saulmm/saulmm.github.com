@@ -563,7 +563,7 @@ In this `<set>` is changed the star shape to a stick candy, after the shape retu
 </set>
 ```
 
-Resutl:
+Result:
 
 <br>
 ![](http://androcode.es/wp-content/uploads/2015/02/animated.gif)
