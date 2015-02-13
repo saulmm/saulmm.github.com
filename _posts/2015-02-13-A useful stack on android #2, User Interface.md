@@ -608,6 +608,12 @@ To achieve this effect, the `translationY` conjugated with the displaced value i
     }
 ```
 
+Result:
+
+<br>
+![](http://androcode.es/wp-content/uploads/2015/02/rings.gif)
+<br>
+
 ** _There are still a few bugs in this section, for example, if you make a quickly scroll a gap is created between the cover image and the title_, _Pull request welcome!_
 <br>
 ## Resources:
