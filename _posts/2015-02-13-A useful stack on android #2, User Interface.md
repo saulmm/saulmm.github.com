@@ -616,6 +616,7 @@ Result:
 
 ** _There are still a few bugs in this section, for example, if you make a quickly scroll a gap is created between the cover image and the title_, _Pull request welcome!_
 <br>
+<br>
 ## Resources:
 
 - [First look at AnimatedVectorDrawable](http://blog.sqisland.com/2014/10/first-look-at-animated-vector-drawable.html) - Chiu-Ki Chan
