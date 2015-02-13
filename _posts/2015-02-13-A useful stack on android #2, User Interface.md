@@ -211,7 +211,7 @@ public void onClick() {
 With Android L Google has introduced a new library called [_Palette_](https://developer.android.com/reference/android/support/v7/graphics/Palette.html), it promises to extract the predominant colors in an image.
 
 <br>
-![MovieDetailActivity](http://androcode.es/wp-content/uploads/2015/02/palette.png)
+![MovieDetailActivity](http://androcode.es/wp-content/uploads/2015/02/palette-e1423862022923.png)
 <br>
 These colors are grouped in a container called [_Swatch_](https://developer.android.com/reference/android/support/v7/graphics/Palette.Swatch.html), wich contains among other properties a background color and a color for the text readable in conjunction with the background color.
 
