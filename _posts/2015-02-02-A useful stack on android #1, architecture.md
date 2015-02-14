@@ -10,7 +10,7 @@ This is the first in a series of articles on how to setup an environment to deve
 
 As an example, I will rely on the following project, is a proof of concept of a simple catalog of films, which can be marked as views or pendings.
 
-The information about the films is taken from a public API called [themoviedb](https://www.themoviedb.org/documentation/api), you can find nice documentation in this section at [Apiary](http: // docs. themoviedb.apiary.io/#).
+The information about the films is taken from a public API called [themoviedb](https://www.themoviedb.org/documentation/api), you can find nice documentation in this section at [Apiary](http://docs.themoviedb.apiary.io/).
 
 The project is based on the pattern [_Model View Presenter_](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter), also implements some _guidelines_ of [_Material Design_](http://www.google.com/design/spec/material-design/introduction.html) like transitions, structures, animations, colors etc...
 
