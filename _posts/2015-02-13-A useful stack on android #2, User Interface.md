@@ -172,7 +172,7 @@ This avoids having to write repetitive sentences like: `findViewById`, `setOnCli
     ObservableScrollView observableScrollView;
 ```
 
-An interesnting fact of this library is that the annotation: `@InjectViews`, which allows to inject multiple views in a list, so you can use interfaces as `Setters` or `Actions` to apply a property in all views inside the list.
+An interesnting fact of this library is the annotation `@InjectViews`, which allows to inject multiple views in a list, so you can use interfaces as `Setters` or `Actions` to apply a property in all views inside the list.
 
 <br>
 `GUIUtils.java`
