@@ -3,11 +3,11 @@ layout: post
 permalink: a-useful-stack-on-android-2-user-interface
 ---
 
-This is the second part of the series: _'A useful stack on android'_, in the [first part](http://saulmm.github.io/2015/02/02/A%20useful%20stack%20on%20android%20%231,%20architecture/), I reviewed the general architecture of the proyect, this article aims to focus into the user interface and the global design of the application.
+This is the second part of the series: _'A useful stack on android'_, in the [first part](http://saulmm.github.io/2015/02/02/A%20useful%20stack%20on%20android%20%231,%20architecture/), I reviewed the general architecture of the proyect, this article focuses on the user interface and the global design of the application.
 
-I would not like to talk about how to _materialize_ an android application with [Material Design](http://www.google.com/design/spec/material-design/introduction.html) you can find a nice keynote by David Gonzalez [here](https://plus.google.com/+davidgonzalezmalmstein/posts/MHRQC1M2HGv).
+I do not like to talk about how to _materialize_ an android application with [Material Design](http://www.google.com/design/spec/material-design/introduction.html) you can find [here](https://plus.google.com/+davidgonzalezmalmstein/posts/MHRQC1M2HGv) a nice presentation by David Gonzalez.
 
-Looking the design structure, there is only two activities, `MoviesActivity` with a [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html) containing all the films & a `MovieDetailActivity`, that shows some details of the selected film.
+Looking at the structure of the design, there are only two activities: `MoviesActivity` with a [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html) containing all the films, and the `MovieDetailActivity`, that shows some details of a selected film.
 
 This project is available on [GitHub](https://github.com/saulmm/Material-Movies)
 
@@ -31,11 +31,13 @@ This project is available on [GitHub](https://github.com/saulmm/Material-Movies)
 <br>
 ### AppCompat
 
-What to say about the new AppCompat [library](http://android-developers.blogspot.com.es/2014/10/appcompat-v21-material-design-for-pre.html) from Google, In this library it is included a new component, the [Toolbar](http://developer.android.com/reference/android/widget/Toolbar.html).
+What to say about the new AppCompat [library](http://android-developers.blogspot.com.es/2014/10/appcompat-v21-material-design-for-pre.html) from Google, in this library a new element called [Toolbar](http://developer.android.com/reference/android/widget/Toolbar.html) is included.
 
 The `Toolbar` element is a generalization of the old: [_Action Bar_](http://developer.android.com/reference/android/app/ActionBar.html). 
 
-This new _widget_ is a [ViewGroup](http://developer.android.com/reference/android/view/ViewGroup.html), so we can group views within it, in my case I have included a custom `TextView` with a particular font. In addition, taking advantage of the flexibility, when the user _scrolls down_ the toolbar is hidden, when the user _scrolls up_ the toolbar gets shown.
+This new _widget_ is a [ViewGroup](http://developer.android.com/reference/android/view/ViewGroup.html), so we can group views within it, in my case I have included a custom `TextView` with a particular font. 
+
+Taking advantage of being able to have this component in my layout, when the user _scrolls down_ the `Toolbar` is hidden, when the user _scrolls up_ the `Toolbar is displayed.
 
 ![](http://androcode.es/wp-content/uploads/2015/02/bar.gif)
 <br>
@@ -137,7 +139,9 @@ private void hideToolbar() {
 
 [ButterKnife](http://jakewharton.github.io/butterknife/) by [Jake Wharton](https://github.com/JakeWharton), is a library to perform view injections.
 
-This avoids having to write repetitive sentences like: `findViewById`, `setOnClickListener(new OnClick...)` etc... In this way, the code is more readable in adition to write much less.
+This avoids having to write repetitive sentences like `findViewById` or `setOnClickListener(new OnClick...)`.
+
+Using [ButterKnife](http://jakewharton.github.io/butterknife/), the code is more readable in adition to write much less.
 
 <br>
 `MovieDetailActivity.java`
@@ -172,7 +176,7 @@ This avoids having to write repetitive sentences like: `findViewById`, `setOnCli
     ObservableScrollView observableScrollView;
 ```
 
-An interesnting fact of this library is the annotation `@InjectViews`, which allows to inject multiple views in a list, so you can use interfaces as `Setters` or `Actions` to apply a property in all views inside the list.
+An interesting fact of this library, is the annotation `@InjectViews`, which allows to inject multiple views in a list, so you can use interfaces as `Setters` or `Actions` to apply a property to all views inside the list at once.
 
 <br>
 `GUIUtils.java`
@@ -187,7 +191,7 @@ public static final ButterKnife.Setter<TextView, Integer> setter = new ButterKni
 };
 ```
 
-In my case all `TextViews` that display information about the film are set with a certain text color.
+In my case all `TextViews` that show information about the film are set with a certain text color.
 
 `MoviesActivity.java`
 
@@ -224,12 +228,12 @@ With _Palette_ you can obtain the following sets of colors:
 - `LightMutedSwatch`
 - `LightVibrantSwatch`
 
-For this application I have only used: `VibrantSwatch`, `DarkVibrantSwatch` and `LightVibrantSwatch`.
+For this application I have used: `VibrantSwatch`, `DarkVibrantSwatch` and `LightVibrantSwatch`.
 
 ![](http://androcode.es/wp-content/uploads/2015/02/palette2.png)
 <br>
 
-Keep in mind that you can not always to obtain certain colors in an image, so it is recommended to check that _Palette_ not return __null__ sets.
+Note that you can not always extract certain colors in an image, so it is recommended to check that _Palette_ does not return __null__ sets.
 
 Another aspect to consider is that the task of determining colors is a complex task, so _Palette_ provides an asynchronous way to generate the colors.
 
@@ -268,11 +272,11 @@ public class MovieDetailActivity extends Activity implements
 }
 ```
 
-I found a very some interesting concepts in the _Dialer_ app at Lollipop. In the contact detail view, the icons are tinted depending the tint color that is applied to the contact picture:
+I found some interesting concepts in the _Dialer_ app of Lollipop. In the contact detail view, the icons are tinted depending the tint color that is applied to the contact picture:
 
 ![](http://androcode.es/wp-content/uploads/2015/02/dialer_colors1.png)
 
-This effect can be achieved by dynamically applying a [ColorFilter](http://developer.android.com/reference/android/graphics/ColorFilter.html) to the _CompoundDrawable_ of the _TextView_
+This effect can be achieved dynamically by applying a [ColorFilter](http://developer.android.com/reference/android/graphics/ColorFilter.html) to the _CompoundDrawable_ of the _TextView_
 
 <br>
 `GUIUtils.java`
@@ -301,9 +305,9 @@ Result:
 <br>
 ### Transitions
 
-The transition between the activity: `MoviesActivity`, and the `MovieDetailActivity`, makes use of a shared element that is the cover image of the selected film.
+The transition between the activity: `MoviesActivity`, and the `MovieDetailActivity`, makes use of a shared element which is the cover image of the selected film.
 
-In the adapter of the `RecyclerView` is specified the `transitionName` that will be necessary to perform the transition.
+In `RecyclerView` adapter is specified the `transitionName` that will be necessary to perform the transition.
 
 ```java
     @Override
@@ -324,7 +328,7 @@ In the adapter of the `RecyclerView` is specified the `transitionName` that will
     }
 ```
 
-Before change to the activity detail, is specified in the intent the element that will be shared with the `ActivityOptions`.
+Before change to the detail activity, is specified in the intent the element that will be shared with the `ActivityOptions`.
 
 ```java
     @Override
@@ -475,7 +479,7 @@ The `<animated-vector>` allows to animate groups of `<paths>`, translations, rot
 
 In this case for example, a star is shown with a scaling animation and when it ends, an animation of rotation is shown. At the same time the shape  of the star is changing to the stick candy shape, and then changes again to its original shape, a star.
 
-It is noteworthy that to make it possible to show a morphing animation , the data has to contain the __same__ `SVG` commands if not, an exception will be triggered.
+It is noteworthy that to make it possible to show a morphing animation, the data has to contain the __same__ `SVG` commands, if not, an exception will be triggered.
 
 `avd_star.xml`
 
@@ -494,9 +498,9 @@ It is noteworthy that to make it possible to show a morphing animation , the dat
 
 </animated-vector>
 ```
-The `<animated-vector>` is associated to the _drawable_ `vd_star.xml`, the targets, are the elements that will be animated:
+The `<animated-vector>` is associated with the _drawable_ `vd_star.xml`, the targets, are the elements that will be animated:
 
-- The first group is focused in the group: `start_group` defined on the vector: `star.xml`, this will run an animation of scaling and rotation.
+- The first group is focused in the group: `start_group` defined on the vector: `vd_star.xml`, this will run an animation of scaling and rotation.
 
 `appear_rotate.xml`
 
@@ -561,6 +565,31 @@ In this `<set>` is changed the star shape to a stick candy, after the shape retu
         android:valueType="pathType"
         android:interpolator="@android:anim/accelerate_interpolator"/>
 </set>
+```
+
+`activity_detail.xml`
+
+```xml
+    <ImageView
+        android:id="@+id/activity_movie_detail_confirmation_image"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:src="@drawable/avd_star"
+        />
+```
+
+`MovieDetailActivity.java`
+
+```java
+    @Override
+    public void animateConfirmationView() {
+
+        Drawable drawable = confirmationView.getDrawable();
+
+        if (drawable instanceof Animatable)
+            ((Animatable) drawable).start();
+    }
 ```
 
 Result:
