@@ -335,3 +335,8 @@ private RecyclerView.OnScrollListener recyclerScrollListener =
         }
     }
 ```
+
+Result:
+
+
+![](https://googledrive.com/host/0B62SZ3WRM2R2c2dfcXRvNXVUREE   )
