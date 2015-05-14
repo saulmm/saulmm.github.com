@@ -90,7 +90,7 @@ First of all it's necessary to configure the annotations processor, the `android
     }
 ```
 
-`build.gradle`
+`build.gradle` (In your android module)
 
 ```javascript
 
