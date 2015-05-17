@@ -4,20 +4,20 @@ permalink: when-Thor-&-Hulk-meet-dagger2-rxjava-1
 title: When the Avengers meet Dagger2, RxJava & Retrofit in a clean way
 ---
 
-Recently, a lot articles, frameworks, and talks are appearing related with testing and software architecture at the android community, as said in the last [Droidcon Spain](http://es.droidcon.com/2015/speakers/), we are focusing increasingly on how to do robust applications instead on how to develop specific features. That denotes that the android framework and the current Android commnunity is reaching some level of maturity.
+Recently, a lot articles, frameworks, and talks at the android community, are appearing talking about testing and software architecture, as said in the last [Droidcon Spain](http://es.droidcon.com/2015/speakers/), we are focusing on how to do robust applications instead on how to develop specific features. That denotes that the Android framework and the current Android commnunity is reaching some level of maturity.
 
-The first idea was to write a single article, but seeing the large amount of contents that these frameworks provide I have decided to divide the article  into at least a 3 part series.
+Today, if you are an Android developer and don't recognize the words [Dagger 2](http://google.github.io/dagger/), [RxJava](https://github.com/ReactiveX/RxJava) or [Retrofit](http://square.github.io/retrofit/), you are missing something, this series will put some focus on giving the basic ideas of how to use these frameworks together with a [Clean Architecture](http://blog.8thlight.com/uncle-bob/2012/08/13/the-clean-architecture.html) perspective.
 
-Today, if you are an android developer and don't recognize the words [Dagger 2](http://google.github.io/dagger/), [RxJava](https://github.com/ReactiveX/RxJava) or [Retrofit](http://square.github.io/retrofit/), you are missing something, this series focuses on giving some basic ideas of how to use these frameworks together in a [Clean Architecture](http://blog.8thlight.com/uncle-bob/2012/08/13/the-clean-architecture.html) perspective.
+My first idea was to write a single article, but seeing the large amount of contents that these frameworks provide I've decided to create a series with at least 3 articles.
 
-As always, all the code is published in [GitHub](https://github.com/saulmm/Avengers), please, all the recomendations, errors & problems, and comments are welcome, sorry if I don't have much time to answer all :)
+As always, all the code is published in [GitHub](https://github.com/saulmm/Avengers), please, all the recomendations, errors and comments are welcome, sorry if I don't have much time to answer all :)
 
 ![](http://androcode.es/wp-content/uploads/2015/05/avengers_list-e1431571424213.png)
 
 <br>
 ## Dependency Injectors & Dagger 2
 
-It has really taken me time to understand how this framework works, so I would like to make clear the way in which I have learned to use it.
+It took some time to find out how this framework works, so I would like to make clear the way in which I have learned to use it.
 
 [Dagger 2](http://google.github.io/dagger/) It's based on the [dependency injection](http://en.wikipedia.org/wiki/Dependency_injection) pattern.
 
@@ -38,15 +38,15 @@ Look at the following snippet:
     }
 ```
 
-Thor needs an `AvengerWeapon` to work correctly, the basic idea is that Thor would get fewer benefits if he creates its own `AvengerWeapon` than passing them throught his constructor. If Thor creates his own hammer he would be increasing the coupling.
+Thor needs an `AvengerWeapon` to work correctly, the basic idea of the dependency injection pattern is that Thor would get fewer benefits if he creates its own `AvengerWeapon` than passing them throught his constructor. If Thor creates his own hammer he would be increasing the coupling.
 
-`AvengerWeapon` could be an interface that would be implemented and injected in different ways depending of our logic.
+`AvengerWeapon` could be an interface that would be implemented and injected in different ways depending our logic.
 
-In Android, because as the framework is designed, it's not always easy access to the constructors, `Activity` and `Fragment` are examples.
+In Android, because how the framework is designed, it's not always easy access to the constructors, `Activity` and `Fragment` are examples.
 
-That's where (http://google.github.io/dagger/), [Dagger](http://square.github.io/dagger/) or [Guice](https://github.com/google/guice) can bring benefits.
+That's where the dependency injectors like (http://google.github.io/dagger/), [Dagger](http://square.github.io/dagger/) or [Guice](https://github.com/google/guice) can bring benefits.
 
-With an injector as [Dagger 2](http://google.github.io/dagger/) we would transform the previous code in something like this:
+With [Dagger 2](http://google.github.io/dagger/) we would transform the previous code in something like this:
 
 ```java
     // Thor is awesome. He has a hammer!
@@ -59,7 +59,7 @@ With an injector as [Dagger 2](http://google.github.io/dagger/) we would transfo
     }
 ```
 
-We are not accessing to the Thor's constructor directly, the injector based in a few directives is in charge to build the Thor's hammer
+We are not accessing to the Thor's constructor directly, the injector, with a few directives is in charge to build the Thor's hammer
 
 ```java
     public class ThorHammer extends AvengerWeapon () {
@@ -76,7 +76,7 @@ The `@Inject` annotation indicates to [Dagger 2](http://google.github.io/dagger/
 <br>
 ### Dagger 2  
 
-[Dagger 2](http://google.github.io/dagger/) is promoted and implemented by Google forked from [Dagger](http://square.github.io/dagger/), which it was created by [Square](https://corner.squareup.com/).
+[Dagger 2](http://google.github.io/dagger/) is promoted and implemented by Google, forked from [Dagger](http://square.github.io/dagger/), which it was created by [Square](https://corner.squareup.com/).
 
 First of all it's necessary to configure the annotations processor, the `android-apt` plugin plays that role, allowing to use the annotations processor without inserting it into the final .apk. The processor also configures the source code generated by this processor.
 
@@ -135,9 +135,9 @@ This is the main module, we are interested in its dependencies to survive during
 Simple, right?
 
 <br>
-With the `@Provides` annotation we are saying to Dagger 2 how a dependency has to be build if required. Otherwhise if we wouldn't indicate a provider for a particular dependency, Dagger 2 will go to find it to the constructo annotated with: `@Inject`.
+With the `@Provides` annotation we are saying to Dagger 2 how a dependency has to be build if required. Otherwhise if we wouldn't indicate a provider for a particular dependency, Dagger 2 will go to find it to the constructor annotated with: `@Inject`.
 
-As we had said, the modules are used by components to inject dependencies, see the component of this module:
+The modules are used by components to inject dependencies, see the component of this module:
 
 
 ```java
@@ -149,14 +149,14 @@ public interface AppComponent {
 }
 ```
 
-This module isn't invoked by any activity or fragment, instead is obtained by a more complex module to provide these dependencies where are required
+This module isn't invoked by any activity or fragment, instead, is obtained by a more complex module to provide these dependencies where are required
 
 ```java
 AvengersApplication app();
 Repository dataRepository();
 ```
 
-The components must to expose their dependencies to the graph (the dependencies that the module provides), i.e, the dependencies provided by this module **must** be visible to other components that have this component as a dependency of the other components, if these dependencies are not visible Dagger 2 could not inject them where are required.
+The components must to expose their dependencies to the graph (the dependencies that the module provides), i.e, the dependencies provided by this module **must** to be visible to other components that have this component as a dependency of the other components, if these dependencies are not visible Dagger 2 could not inject them where are required.
 
 Here's our tree of dependencies:
 ![](http://androcode.es/wp-content/uploads/2015/05/Dagger-graph.png)
@@ -322,9 +322,7 @@ public class AvengersListPresenter implements Presenter, RecyclerClickListener {
     }
 ```
 
-As I said, [Dagger 2](http://google.github.io/dagger/) will resolve the presenter because has a `@Inject` annotation. T
-
-he argument that the constructor receives is solved by [Dagger 2](http://google.github.io/dagger/), because it knows how to build it thanks to the `@Provides` method in the module.
+[Dagger 2](http://google.github.io/dagger/) will resolve the presenter because has a `@Inject` annotation. The argument that the constructor receives is solved by [Dagger 2](http://google.github.io/dagger/), because it knows how to build it thanks to the `@Provides` method in the module.
 
 <br>
 ## Conclusion
