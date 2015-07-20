@@ -1,7 +1,7 @@
 ---
 layout: post
 permalink: squeezing-gradle-builds
-title: Squeezing your Gradle Builds
+title: Squeezing your Gradle builds
 ---
 
 Android Studio came from by the hand of **Gradle** as a new tool for the construction and packaging of Android projects. This powerful utility, well exploited, can provide much power and comfort developing complex Android projects. These projects may contain different modules, variants, dependencies, continuous integration systems, code quality, etc.
