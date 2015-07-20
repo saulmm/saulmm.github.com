@@ -206,7 +206,7 @@ _/ presentation / build.gradle_
 ```
 
 <br>
-The `build.gradle` file of the android module becomes long and repetitive. If we consult the Android Gradle Plugin [DSL](https://developer.android.com/tools/building/plugin-for-gradle.html), we can see that `productFlavors` delegates  on de class: [NamedDomainObjectContainer](https://docs.gradle.org/current/javadoc/org/gradle/api/NamedDomainObjectContainer.html), this provides a [whenObjectAdded](https://docs.gradle.org/current/javadoc/org/gradle/api/DomainObjectCollection.html#whenObjectAdded (groovy.lang.Closure)) method that allows you to perform an action when an object is added, in this case our 'ProductFlavor'.
+The `build.gradle` file of the android module becomes long and repetitive. If we consult the Android Gradle plugin [DSL](https://developer.android.com/tools/building/plugin-for-gradle.html), we can see that `productFlavors` delegates  on de class: [NamedDomainObjectContainer](https://docs.gradle.org/current/javadoc/org/gradle/api/NamedDomainObjectContainer.html), this provides a [whenObjectAdded](https://docs.gradle.org/current/javadoc/org/gradle/api/DomainObjectCollection.html#whenObjectAdded (groovy.lang.Closure)) method that allows you to perform an action when an object is added, in this case our 'ProductFlavor'.
 
 _/ presentation / build.gradle_
 
@@ -225,8 +225,8 @@ productFlavors.whenObjectAdded { flavor ->
 }
 ```
 <br>
-In this way, we can refactor the _flavors_ resulting this `build.gradle` file:
 
+In this way, we can refactor the _flavors_ 
 
 _/ presentation / build.gradle_
 
