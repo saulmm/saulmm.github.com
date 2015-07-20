@@ -301,6 +301,7 @@ include ':presentation', ':domain', ':model'
 
 We need indicate which module we are going to use as dependency, example, if we are at the presentation module and we need classes from domain, we need to compile the domain project:
 
+
 ```
 dependencies {
     compile project (':domain')
