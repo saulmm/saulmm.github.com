@@ -242,8 +242,6 @@ android {
         applicationId     basePackageName
         minSdkVersion     androidMinSdkVersion
         targetSdkVersion  androidSdkVersion
-        versionCode       1
-        versionName       "1.0"
     }
 
     buildTypes {
