@@ -305,7 +305,8 @@ We need indicate which module we are going to use as dependency, example, if we 
 dependencies {
     compile project (':domain')
 }
-``
+```
+
 
 <br>
 ##### Dependencies
