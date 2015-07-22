@@ -10,14 +10,16 @@ In the [first part](http://saulmm.github.io/2015/02/02/A%20useful%20stack%20on%2
 
 The [second part](http://saulmm.github.io/a-useful-stack-on-android-2-user-interface/) has explained how to take small bites of [Material Design](http://www.google.com/design/spec/material-design/introduction.html) on the user interface, through colors, transitions, vectors, etc.
 
-This third part is about **compatibility** , it is known that the fragmentation of Android is huge, versions, screen sizes, fetaures, etc. For that reason we go down a few versions from the inital version of the project (LLolipop) and we will support diferent screen sizes.
+In this third part, we will talk about **compatibility** , it is known that  the Android fragmentation is huge, different versions, screen sizes, fetaures, etc. 
 
-All this examples are available on **GitHub** - [https://github.com/saulmm/Material-Movies](https://github.com/saulmm/Material-Movies)
+For that reason we will decrease a few versions from the inital version of the project (Lollipop) and we will support diferent screen sizes.
+
+All these examples are available on **GitHub** - [https://github.com/saulmm/Material-Movies](https://github.com/saulmm/Material-Movies)
 
 <br>
 ### Downgrading SDK Levels
 
-I opted the level 16 of the Android SDK,  from the [Dashboards](https://developer.android.com/about/dashboards/index.html) published by Google to date, the number of devices that support versions from Jelly Bean is an appealing **86,8 %**.
+I have choosen the 16 level of the Android SDK, from the [Dashboards](https://developer.android.com/about/dashboards/index.html) published by Google to date, the number of devices that support versions from Jelly Bean is an appealing **86,8 %**.
 
 ![](http://androcode.es/wp-content/uploads/2015/03/Screen-Shot-2015-03-09-at-14.48.56-e1425909065199.png)
 
