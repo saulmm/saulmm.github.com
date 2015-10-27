@@ -214,7 +214,7 @@ _/ presentation / build.gradle_
 productFlavors.whenObjectAdded { flavor ->
 
     def flavorData = rootProject.ext[flavor.name]
-    flavor.applicationId paid.packageName
+    flavor.applicationId flavorData.packageName
     
     flavor.buildConfigField 
         'boolean', fieldShowAds, flavorData.showAds
