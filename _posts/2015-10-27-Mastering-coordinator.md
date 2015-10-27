@@ -15,6 +15,7 @@ As its name suggests, the goal and philosophy of this _ViewGroup_ is to **coordi
 
 Consider the following picture:
 
+<br>
 ![](http://androcode.es/wp-content/uploads/2015/10/simple_coordinator.gif)
 
 <br>
