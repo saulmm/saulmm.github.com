@@ -2,6 +2,8 @@
 layout: post
 permalink: mastering-coordinator
 title: Mastering the Coordinator Layout
+tags:
+- Design
 ---
 
 In the [Google I/O 15](https://www.youtube.com/watch?v=7V-fIGMDsmE), Google released a [new support library](http://android-developers.blogspot.com.es/2015/05/android-design-support-library.html) which implements several components closely related with the [Material Design's spec](https://www.google.com/design/spec/material-design/introduction.html), among these components you can find new _ViewGroups_ like the `AppbarLayout`, `CollapsingToolbarLayout` and `CoordinatorLayout`.
