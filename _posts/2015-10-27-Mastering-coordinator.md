@@ -338,7 +338,7 @@ All together:
   private void modifyAvatarDependingDependencyState(
     CircleImageView avatar, View dependency) {
         //  avatar.setY(dependency.getY());
-        //  avatar.setBlahBlat(dependency.blah / blah);
+        //  avatar.setBlahBlah(dependency.blah / blah);
     }    
 }
 ```
