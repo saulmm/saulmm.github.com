@@ -4,14 +4,14 @@ permalink: mastering-coordinator
 title: Mastering the Coordinator Layout
 ---
 
-In the [Google I/O 15](https://www.youtube.com/watch?v=7V-fIGMDsmE), Google released a [new support library](http://android-developers.blogspot.com.es/2015/05/android-design-support-library.html) which implements several components closely related with the [Material Design's spec](https://www.google.com/design/spec/material-design/introduction.html), among these you can find new _ViewGroups_ like the `AppbarLayout`, `CollapsingToolbarLayout` and `CoordinatorLayout`.
+In the [Google I/O 15](https://www.youtube.com/watch?v=7V-fIGMDsmE), Google released a [new support library](http://android-developers.blogspot.com.es/2015/05/android-design-support-library.html) which implements several components closely related with the [Material Design's spec](https://www.google.com/design/spec/material-design/introduction.html), among these components you can find new _ViewGroups_ like the `AppbarLayout`, `CollapsingToolbarLayout` and `CoordinatorLayout`.
 
 Well combined and configured these _Viewgroups_ can be very powerful, therefore I have decided to write a post with some configurations and tips. 
 
 <br>
 ## CoordinatorLayout
 
-As its name suggests, the goal and philosophy of this _ViewGroup_ is to **coordinate** their interior views.
+As its name suggests, the goal and philosophy of this _ViewGroup_ is to **coordinate** the views that are inside it.
 
 Consider the following picture:
 
@@ -19,7 +19,7 @@ Consider the following picture:
 ![](http://androcode.es/wp-content/uploads/2015/10/simple_coordinator.gif)
 
 <br>
-In this example you can see how the views are coordinated with each other, with a glance we can see how some _Views_ **depend** on other. (we'll talk about this later).
+In this example you can see how the views are coordinated with each other, with a glance, we can see how some _Views_ **depend** on other. (we'll talk about this later).
 
 This would be one of the simplest structures using the `CoordinatorLayout`:
 <br>
@@ -102,7 +102,7 @@ This would be one of the simplest structures using the `CoordinatorLayout`:
 </android.support.design.widget.CoordinatorLayout>
 ```
 
-Consider the skeleton of that layout. The `CoordinatorLayout` has only three childs, an `AppbarLayout`,  an _scrolleable_ view and an anchored `FloatingActionBar`.
+Consider the skeleton of that layout. The `CoordinatorLayout` has only three childs: an `AppbarLayout`,  an _scrolleable_ view and an anchored `FloatingActionBar`.
 
 ```xml
 <CoordinatorLayout>
@@ -267,7 +267,7 @@ To create a custom `Behavior` It isn't as difficult as it may seem, to begin we 
 
 ### Childs and dependencies
 
-The **child** is the view that enhances behavior, **dependency** who will serve as a trigger to interact with the _child_ element. See this example, the **child** would be the `ImageView` and the **dependency** would be the `Toolbar`, in that way always so long as the `Toolbar` moves, the `ImageView` will move too.
+The **child** is the view that enhances behavior, **dependency** who will serve as a trigger to interact with the _child_ element. See this example, the **child** would be the `ImageView` and the **dependency** would be the `Toolbar`, in that way, if the `Toolbar` moves, the `ImageView` will move too.
 
 <br>
 
@@ -280,7 +280,7 @@ Now that we have defined the concepts we can speak of implementation, the first 
 - layoutDependsOn
 - onDependentViewChanged
 
-The method: `layoutDependsOn` will be called every time that something happens in the layout, what we must do to return `true` once we identify the dependency, for example, this method is automatically called when the user scrolls, that way we can make our daughter sight react accordingly.
+The method: `layoutDependsOn` will be called every time that something happens in the layout, what we must do to return `true` once we identify the dependency, in the example, this method is automatically fired when the user scrolls (because the `Toolbar` will move), in that way we can make our child sight react accordingly.
 
 ```java
    @Override
