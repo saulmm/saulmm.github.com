@@ -104,7 +104,7 @@ This would be one of the simplest structures using the `CoordinatorLayout`:
 </android.support.design.widget.CoordinatorLayout>
 ```
 
-Consider the skeleton of that layout. The `CoordinatorLayout` has only three childs: an `AppbarLayout`,  an _scrolleable_ view and an anchored `FloatingActionBar`.
+Consider the skeleton of that layout. The `CoordinatorLayout` has only three childs: an `AppbarLayout`,  an _scrolleable_ view and an anchored `FloatingActionButton`.
 
 ```xml
 <CoordinatorLayout>
