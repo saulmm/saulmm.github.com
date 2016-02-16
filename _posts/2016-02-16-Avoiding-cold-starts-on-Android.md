@@ -109,7 +109,7 @@ This `ImageView` is slightly above of the center of the screen, this could be in
 <br>
 ## Styling with a placeholder
 
-With the `<layer-list>` we can also create a placeholder of theu ui which will take the real content of the main activity, for example, we could emulate a Toolbar by playing with the '<layer-list>'
+With the `<layer-list>` we can also create a placeholder of theu ui which will take the real content of the main activity, for example, we could emulate a Toolbar by playing with the `<layer-list>`.
 
 ![](https://github.com/saulmm/OnboardingSample/blob/master/art/toolbar_placeholder.png?raw=true)
 
