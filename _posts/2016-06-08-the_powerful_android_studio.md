@@ -42,7 +42,7 @@ If you believe that tabs don't offer any benefit to you,  disable them under `se
 [IntelliJ IDEA][6] offers many ways to move effectively through the code without need tabs.
 
 <br>
-## Navegation
+## Navigation
 
 One of the goals which the [JetBrains][7] team encourages to the users is that we have to use the mouse as less as possible. There are tons of actions and commands which allow working in a very effective way without leaving the hands from the keyboard gaining speed and accuracy.
 
