@@ -152,7 +152,6 @@ Similarly, with the shortcut ⌘ + U in an implementation, we can navigate to th
 ### Next Highlighted Error - F2
 
 When Android Studio highlights some compilation errors, usually we use the mouse to scroll until their location and fix them.
-teclado, además de solucionarlos de forma rápida.
 
 With [IntelliJ IDEA][8], we can place the care right on the left of the erros using the feature _Next Highlighted Error_ (F2), avoiding leave your hands from your amazing keyboard. 
 
