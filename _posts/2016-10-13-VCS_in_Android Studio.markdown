@@ -4,7 +4,7 @@ permalink: vcs-android-studio
 title: The VCS client of Android Studio
 ---
 
-Nowadays, we can't image start a new software without a [version control system][5fb469a7], between the different options available for a VCS, Git, without any doubt, has become one of the most popular systems among others like Subversion or Mercurial.
+Nowadays, we can't imagine start a new software without a [version control system][5fb469a7], between the different options available for a VCS, Git, without any doubt, has become one of the most popular systems among others like Subversion or Mercurial.
 
 However, **the learning curve** that this kind of tools requires is often **very high**, since the huge variety of features and options that a version control system includes make it complex and powerful at the same time.
 
@@ -19,7 +19,7 @@ A good use of these tools allows to speed up the daily work since these **compar
 
 ### IntelliJ as a diff, merge tool
 
-Starting with version 2016 of IntelliJ IDEA, [JetBrains][aec9d229] has included an interesing feature called _**[Create command line launcher][7843d9cd]**_, which Android Studio has inherited in its [2.2][c9d1efd1] update.
+Starting with version 2016 of IntelliJ IDEA, [JetBrains][aec9d229] has included an interesting feature called _**[Create command line launcher][7843d9cd]**_, which Android Studio has inherited in its [2.2][c9d1efd1] update.
 
 ![](http://saulmm.github.io/resources/cvs-studio/command_line_launcher.png)
 
