@@ -4,18 +4,18 @@ permalink: vcs-android-studio
 title: The VCS client of Android Studio
 ---
 
-Nowadays, we can't imagine start a new software without a [version control system][5fb469a7], between the different options available for a VCS, Git, without any doubt, has become one of the most popular systems among others like Subversion or Mercurial.
+Nowadays, we can't imagine start a new software project without a [version control system][5fb469a7], between the different options available for a VCS, Git, without any doubt, has become one of the most popular systems among others like Subversion or Mercurial.
 
 However, **the learning curve** that this kind of tools requires is often **very high**, since the huge variety of features and options that a version control system includes make it complex and powerful at the same time.
 
-Both for the most experimented developers and for the beginners is important to use **nice tools** or a well enough customized environment in order to deal with the VCS in a effective and quick way.
+Both for the most experimented developers, and for the beginners, is important to use **nice tools** or a well enough customized environment in order to deal with the VCS in a effective and quick way.
 
 <br/>
 ## Comparisons
 
 Between the benefits we can find using a version control system, a powerful one is to **compare files with their respective states over time**. To that end, [JetBrains][aec9d229] includes one of the most powerful and intuitive **_diff / merge_** tools.
 
-A good use of these tools allows to speed up the daily work since these **comparisons are frequent** when we are modifying the code (adding, deleting or changing), besides reviewing it. Moreover, these **modification** are often **hard to represent**, so is not quite easy to find a good tool to show clearly these changes.
+A good use of these tools allows to speed up the daily work since these **comparisons are frequent** when we are modifying code (adding, deleting or changing lines), besides reviewing it. Moreover, these **modification** are often **hard to represent**, so is not quite easy to find a good tool to show these changes clearly.
 
 ### IntelliJ as a diff, merge tool
 
@@ -23,7 +23,7 @@ Starting with version 2016 of IntelliJ IDEA, [JetBrains][aec9d229] has included 
 
 ![](http://saulmm.github.io/resources/cvs-studio/command_line_launcher.png)
 
-This new feature allows the use of the _**diff / merge**_ tools used in IntelliJ or Android Studio,  **externally**. In such a way that we could use it from **command line** or from our **favorite third party VCS client**.
+This new feature allows the use of the _**diff / merge**_ tools used in IntelliJ or Android Studio  **externally**. In such a way that we could use it from **command line** or from our **favorite third party VCS client**.
 
 ![](http://saulmm.github.io/resources/cvs-studio/external_diff.gif)
 
