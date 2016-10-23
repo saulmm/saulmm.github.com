@@ -116,13 +116,13 @@ IntelliJ, Android Studio and probably among other JetBrains environments, we can
 
 Either from the file explorer or editing a file, the feature _**Open on GitHub**_, will open a **browser** with the remote version of that file. Moreover, if we run this feature with a **selection of text**, the same text will be highlighted in the link created with the [GitHub][b65ae60d] version.
 
-![](http://saulmm.github.io/resources/cvs-studio/quick_commit.gif)
+![](http://saulmm.github.io/resources/cvs-studio/github_gist.gif)
 
 ### Create Pull Requests
 
 There is a way to **create pull requests** directly from the editor, using the feature **_Create Pull Request_** (as usual accessible via find action), the IDE will prompt a **dialog** asking for the **base branch** and the **candidate for merge**. After filling the form, a pull request will be created at [GitHub][b65ae60d].
 
-![](http://saulmm.github.io/resources/cvs-studio/quick_commit.gif)
+![](http://saulmm.github.io/resources/cvs-studio/github_pr.gif)
 
 ### Create Gist
 
