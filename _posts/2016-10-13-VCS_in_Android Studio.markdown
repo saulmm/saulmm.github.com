@@ -116,7 +116,7 @@ IntelliJ, Android Studio and probably among other JetBrains environments, we can
 
 Either from the file explorer or editing a file, the feature _**Open on GitHub**_, will open a **browser** with the remote version of that file. Moreover, if we run this feature with a **selection of text**, the same text will be highlighted in the link created with the [GitHub][b65ae60d] version.
 
-![](http://saulmm.github.io/resources/cvs-studio/github_gist.gif)
+![](http://saulmm.github.io/resources/cvs-studio/github_open.gif)
 
 ### Create Pull Requests
 
