@@ -97,7 +97,7 @@ Let's imagine that we have two views, **A** and **B**, both constrained to the s
 With the Android Studio layout editor is really easy to create and handle chains with the actions inside  contextual menu of the layout editor. By default, Android Studio creates spread chains, where the views  are spread out.
 
 <br/>
-![](http://saulmm.github.io/resources/codeUI1/constraint_creation.gif)
+![](http://saulmm.github.io/resources/codeUI1/chain_creation.gif)
 <br/>
 
 ### Chain types
