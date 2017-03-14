@@ -4,7 +4,7 @@ highlighter:      pygments
 
 analytics :
   provider : google
-  google : 
+  google :
       tracking_id : 'UA-59325020-1'
   getclicky :
     site_id :
@@ -26,7 +26,7 @@ author:
 disqus_shortname: saulmm
 
 gems: [jekyll-paginate]
-paginate: 5
+paginate: 10
 paginate_path: "page:num"
 
 # Custom vars
