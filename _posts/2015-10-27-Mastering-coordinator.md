@@ -8,7 +8,7 @@ tags:
 
 In the [Google I/O 15](https://www.youtube.com/watch?v=7V-fIGMDsmE), Google released a [new support library](http://android-developers.blogspot.com.es/2015/05/android-design-support-library.html) which implements several components closely related with the [Material Design's spec](https://www.google.com/design/spec/material-design/introduction.html), among these components you can find new _ViewGroups_ like the `AppbarLayout`, `CollapsingToolbarLayout` and `CoordinatorLayout`.
 
-Well combined and configured these _Viewgroups_ can be very powerful, therefore I have decided to write a post with some configurations and tips. 
+Well combined and configured, these _Viewgroups_ have a lot of potential. Therefore, I have decided to write a post with some configurations and tips. 
 
 <br>
 ## CoordinatorLayout
@@ -21,9 +21,9 @@ Consider the following picture:
 ![](https://github.com/saulmm/CoordinatorExamples/blob/master/art/simple_coordinator.gif?raw=true)
 
 <br>
-In this example you can see how the views are coordinated with each other, with a glance, we can see how some _Views_ **depend** on other. (we'll talk about this later).
+In this example, views are coordinated with each other, in a glance, we can see how some _Views_ **depend** on others. (we'll talk about this later).
 
-This would be one of the simplest structures using the `CoordinatorLayout`:
+Let's see one of the simplest structures using the `CoordinatorLayout`:
 <br>
 
 ```xml
@@ -104,7 +104,7 @@ This would be one of the simplest structures using the `CoordinatorLayout`:
 </android.support.design.widget.CoordinatorLayout>
 ```
 
-Consider the skeleton of that layout. The `CoordinatorLayout` has only three childs: an `AppbarLayout`,  an _scrolleable_ view and an anchored `FloatingActionButton`.
+The `CoordinatorLayout` has only three childs: an `AppbarLayout`,  a _scrolleable_ view, and an anchored `FloatingActionButton`.
 
 ```xml
 <CoordinatorLayout>
@@ -118,22 +118,22 @@ Consider the skeleton of that layout. The `CoordinatorLayout` has only three chi
 <br>
 ## AppBarLayout
 
-Basically, an `AppBarLayout` is a `LinearLayout` with steroids, their children are placed vertically, with certain parameters the children can manage their behavior when the content is scrolled.
+Basically, an `AppBarLayout` is a `LinearLayout` with steroids, their children are placed vertically, with certain parameters children can manage their own behavior when content is scrolled.
 
-It may sound confusing at first, so if I think a picture is worth a thousand words, a .gif, is even better:
+It might sound a bit confusing at first. Let's try with a gif: 
 
 <br>
 ![](https://github.com/saulmm/CoordinatorExamples/blob/master/art/2015-10-27-03_51_37.gif?raw=true)
 <br>
-The `AppBarLayout` in this case is the blue view, placed under the collapsing image, it contains a `Toolbar`, a `LinearLayout` with title and subtitle and a `TabLayout` with some tabs.
+The `AppBarLayout` in this case is the blue view, placed under the collapsing image, it contains a `Toolbar`. A `LinearLayout` with a title and a subtitle, and, finally, a `TabLayout` with some tabs.
 
-We can manage the behavior of  direct childs in an `AppbarLayout` with the parameter: `layout_scrollFlags`. The value: `scroll` in this case it's present in almost all views, if it wasn't specified in any child then the childs of the `AppbarLayout` will remain static allowing the _scrollable_ content slide behind it.
+We can manage the behavior of `AppbarLayout` direct childs with the parameter: `layout_scrollFlags`. The value: `scroll` in this case it's present in almost all views, if we don't specify it, childs of the `AppbarLayout` will remain static allowing the _scrollable_ content slide behind it.
 
-With the value: `snap`, we avoid fall into _mid-animation-states_, this means that the animations will always hide or expand all the height of its view.
+The value: `snap`, allows us to avoid falling into _mid-animation-states_. That means that animations will always hide or expand its entire height.
 
-The `LinearLayout` which contains the title and subtitle will be shown always that the user scrolls up, (`enterAlways` value), and the `TabLayout` will be always visible because we don't have any flag on it.
+The `LinearLayout` which contains the title and subtitle will be shown always that user scrolls up, (`enterAlways` value), the `TabLayout` will be always visible because we don't have any flag on it.
 
-As you can see the real power of an `AppbarLayout` is caused by the proper management of the different scroll flags in their views.
+As you can see ,the real power of an `AppbarLayout` is caused by the proper management of the different scroll flags in their views.
 
 ```xml
 <AppBarLayout>
@@ -154,7 +154,7 @@ As you can see the real power of an `AppbarLayout` is caused by the proper manag
 </AppBarLayout>
 ```
 
-These are all available parameters acording [Google Developers docs](https://developer.android.com/intl/es/reference/android/support/design/widget/AppBarLayout.LayoutParams.html#CONSTANTS). Anyway, my recommendation is to always play by example. There are some Github repositories with these implementations at the end of this article.
+These are all the available parameters acording [Google Developers docs](https://developer.android.com/intl/es/reference/android/support/design/widget/AppBarLayout.LayoutParams.html#CONSTANTS). Anyway, my recommendation is to always play by example. There are some Github repositories with different implementations at the end of this article.
 
 ### AppbarLayout flags
                                                                          
@@ -169,14 +169,14 @@ These are all available parameters acording [Google Developers docs](https://dev
 <br>
 ## CoordinatorLayout Behaviors
 
-Let's do a little test, go to Android Studio (>= 1.4) and create a project with the template: _Scrolling Activity_, without touching anything, we compile it and this is what we find:
+Let's do a little test, open to Android Studio and create a project with the scrolling template, at the time of the writting is _Scrolling Activity_, without touching anything, we compile it and this is what we find:
 
 ![](https://github.com/saulmm/CoordinatorExamples/blob/master/art/2015-10-27-03_59_27.gif?raw=true)
 
 <br>
-If we review the generated code, neither layouts nor java classes won't have anything related with the Fab's _scale_ animation on scroll. Why?
+If we review the generated code, there are no layouts nor java classes that have something implemented related with the Fab's _scale_ animation on scroll. Why is animated then?
 
- The answer lies in the `FloatingActionButton` source code, since Android Studio v1.2 includes a java decompiler inside it, with `ctrl/cmd + click` we are able to check the source and see what happens:
+ The answer can be found inside the `FloatingActionButton` source code, since Android Studio a java decompiler for free, with `ctrl/cmd + click` we are able to check the source and see what happens:
 
 ```java
 /*
@@ -217,7 +217,7 @@ public class FloatingActionButton extends ImageButton {
 }
 ```
 
-Who is in charge of that scale animation is a new element introduced with the design library called `Behavior`. In this case a `CoordinatorLayout.Behavior<FloatingAcctionButton>`, which depending on some factors including the scroll, shows the FAB or not, interesting, right?.
+Who is in charge of that scale animation is a new element introduced with the design library called `Behavior`. In this case, a `CoordinatorLayout.Behavior<FloatingAcctionButton>`, which depending on some factors including the scroll, shows the FAB or not, interesting, right?.
 
 ###SwipeDismissBehavior
 
