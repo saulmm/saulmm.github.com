@@ -18,7 +18,7 @@ As its name suggests, the goal and philosophy of this _ViewGroup_ is to **coordi
 Consider the following picture:
 
 <br>
-![](http://androcode.es/wp-content/uploads/2015/10/simple_coordinator.gif)
+![](https://github.com/saulmm/CoordinatorExamples/blob/master/art/simple_coordinator.gif?raw=true)
 
 <br>
 In this example you can see how the views are coordinated with each other, with a glance, we can see how some _Views_ **depend** on other. (we'll talk about this later).
@@ -123,7 +123,7 @@ Basically, an `AppBarLayout` is a `LinearLayout` with steroids, their children a
 It may sound confusing at first, so if I think a picture is worth a thousand words, a .gif, is even better:
 
 <br>
-![](http://androcode.es/wp-content/uploads/2015/10/2015-10-27-03_51_37.gif)
+![](https://github.com/saulmm/CoordinatorExamples/blob/master/art/2015-10-27-03_51_37.gif?raw=true)
 <br>
 The `AppBarLayout` in this case is the blue view, placed under the collapsing image, it contains a `Toolbar`, a `LinearLayout` with title and subtitle and a `TabLayout` with some tabs.
 
@@ -171,7 +171,7 @@ These are all available parameters acording [Google Developers docs](https://dev
 
 Let's do a little test, go to Android Studio (>= 1.4) and create a project with the template: _Scrolling Activity_, without touching anything, we compile it and this is what we find:
 
-![](http://androcode.es/wp-content/uploads/2015/10/2015-10-27-03_59_27.gif)
+![](https://github.com/saulmm/CoordinatorExamples/blob/master/art/2015-10-27-03_59_27.gif?raw=true)
 
 <br>
 If we review the generated code, neither layouts nor java classes won't have anything related with the Fab's _scale_ animation on scroll. Why?
@@ -223,7 +223,7 @@ Who is in charge of that scale animation is a new element introduced with the de
 
 Keep diving into the code, if you look inside the _widget_ package of the **design support library**, we'll find a public class called: `SwipeDismissBehavior`. With this new `Behavior` we can very easily implement the functionality of _swipe to dismiss_ in our layouts with a `CoordinatorLayout`:
 
-![](http://androcode.es/wp-content/uploads/2015/10/hammerheadLMY48Msaulmm10242015161844.gif)
+![](https://github.com/saulmm/CoordinatorExamples/blob/master/art/hammerheadLMY48Msaulmm10242015161844.gif?raw=true)
 
 
 ```java
@@ -264,7 +264,7 @@ public void onCreate(Bundle savedInstanceState) {
 To create a custom `Behavior` It isn't as difficult as it may seem, to begin we must take into account two core elements: **child** and **dependency**.
 
 <br>
-![](http://androcode.es/wp-content/uploads/2015/10/Screen-Shot-2015-10-27-at-04.42.37-e1445917457348.png)
+![](https://github.com/saulmm/CoordinatorExamples/blob/master/art/Screen-Shot-2015-10-27-at-04.42.37-e1445917457348.png?raw=true)
 <br>
 
 ### Childs and dependencies
@@ -273,7 +273,7 @@ The **child** is the view that enhances behavior, **dependency** who will serve 
 
 <br>
 
-![](http://androcode.es/wp-content/uploads/2015/10/2015-10-27-04_30_50.gif)
+![](https://github.com/saulmm/CoordinatorExamples/blob/master/art/2015-10-27-04_30_50.gif?raw=true)
 
 <br>
 
